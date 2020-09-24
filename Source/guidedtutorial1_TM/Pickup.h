@@ -33,7 +33,7 @@ public:
 
 	//Box for detecting player overlap
 	UPROPERTY(EditAnywhere)
-	 class UShapeComponent* PickupBox;
+	 class UBoxComponent* PickupBox;
 
 	//Rotation values
 	UPROPERTY(EditAnywhere, Category = "Movement")

@@ -160,7 +160,9 @@ void APlayerCharacter::TrySprint()
 void APlayerCharacter::Interact()
 {//checks if there is a valid interaction target
 	if (CurrentInteractable)
+	{
 		CurrentInteractable->Interact();
+	}
 }
 
 //called to set the interaction target

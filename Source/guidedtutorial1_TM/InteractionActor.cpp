@@ -73,5 +73,6 @@ void AInteractionActor::Interact()
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Interact")));
 
 	YawValue += 1;
+	
 }
 

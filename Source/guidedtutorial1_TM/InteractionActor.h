@@ -14,7 +14,7 @@ class GUIDEDTUTORIAL1_TM_API AInteractionActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AInteractionActor();
-
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,7 +39,7 @@ public:
 		UStaticMeshComponent* InteractMesh;
 	//Box component
 	UPROPERTY(EditAnywhere)
-		class UShapeComponent* InteractBox;
+		class UBoxComponent* InteractBox;
 
 	//called by the PlayerCharacter
 	UFUNCTION(BlueprintCallable, Category = "Button Press")
