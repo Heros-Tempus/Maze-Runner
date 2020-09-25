@@ -90,7 +90,7 @@ void AComponentPawn::SidetoSide(float Value)
 {
 	if (PlayerCharacterMovementComponent && (PlayerCharacterMovementComponent->UpdatedComponent == RootComponent))
 	{
-		PlayerCharacterMovementComponent->AddInputVector(GetActorRightVector() * Value);
+		PlayerCharacterMovementComponent->AddInputVector(GetActorRightVector() * -(Value));
 	}
 }
 

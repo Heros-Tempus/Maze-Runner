@@ -65,7 +65,7 @@ void ARandomMazeGenerator::BeginPlay()
 		CellStack.Push(CurrentIndexCell);
 		VisitedCells = 1;
 
-		while (VisitedCells != 169)
+		while (VisitedCells != CellList.Num())
 		{
 			CurrentDeltaTime = 0.0f;
 
@@ -96,52 +96,24 @@ void ARandomMazeGenerator::BeginPlay()
 				}
 			}
 		}
-		CellList[0]->DestroyWall(2);
-		CellList[RowNumber * ColumnNumber - 1]->DestroyWall(3);
+		switch (EntranceSwitch)
+		{
+		case 0:
+			CellList[0]->DestroyWall(2);
+			CellList[RowNumber * ColumnNumber - 1]->DestroyWall(3);
+			break;
+		case 1:
+			CellList[ColumnNumber-1]->DestroyWall(3);
+			CellList[(RowNumber * ColumnNumber) - ColumnNumber]->DestroyWall(2);
+			break;
+		}
 }
 
 // Called every frame
 void ARandomMazeGenerator::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	/*
-	if (bRandomizeMaze)
-	{
-		CurrentDeltaTime += DeltaTime;
-		if (CurrentDeltaTime > WaitTimeBetweenCreateCells)
-		{
-			CurrentDeltaTime = 0.0f; 
 
-			if (VisitedCells < CellList.Num())
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Adding Cell: %d / %d "), CellStack.Num(), CellList.Num());
-
-				int32 NextIndexCell = GetAdjacentCellWithWalls(CurrentIndexCell);
-
-				if (NextIndexCell > -1)
-				{
-					CellStack.Push(CurrentIndexCell);
-					CurrentIndexCell = NextIndexCell;
-					VisitedCells++;
-				}
-				else
-				{
-					if (CellStack.Num() > 0)
-					{
-						CurrentIndexCell = CellStack.Pop();
-					}
-					else
-					{
-						VisitedCells = CellList.Num();
-						UE_LOG(LogTemp, Warning, TEXT("Random Maze generation completed"));
-						bRandomizeMaze = false;
-					}
-				}
-			}
-		}
-	}
-	CellList[0]->DestroyWall(2);
-	CellList[RowNumber * ColumnNumber - 1]->DestroyWall(3);*/
 }
 
 int32 ARandomMazeGenerator::GetAdjacentCellWithWalls(const int32& IndexCell)

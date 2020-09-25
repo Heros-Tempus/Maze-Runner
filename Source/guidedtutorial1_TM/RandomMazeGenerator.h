@@ -26,7 +26,7 @@ protected:
 		int32 DistanceYBetweenCells = 300;
 
 	UPROPERTY(EditAnywhere)
-		float WaitTimeBetweenCreateCells;
+		int32 EntranceSwitch;
 private:
 	TArray<AMazeCell*> CellList;
 	TArray<int32> CellStack;
