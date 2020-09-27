@@ -16,14 +16,14 @@ protected:
 		TSubclassOf<class AMazeCell> CellToSwapClass = nullptr;
 
 	UPROPERTY(EditAnywhere)
-		int32 ColumnNumber;
+		int32 ColumnNumber = 13;
 	UPROPERTY(EditAnywhere)
-		int32 RowNumber = 9;
+		int32 RowNumber = 13;
 
 	UPROPERTY(EditAnywhere)
-		int32 DistanceXBetweenCells = 300;
+		int32 DistanceXBetweenCells = 250;
 	UPROPERTY(EditAnywhere)
-		int32 DistanceYBetweenCells = 300;
+		int32 DistanceYBetweenCells = 250;
 
 	UPROPERTY(EditAnywhere)
 		int32 EntranceSwitch;

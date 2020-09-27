@@ -91,7 +91,6 @@ void ARandomMazeGenerator::BeginPlay()
 					{
 						VisitedCells = CellList.Num();
 						UE_LOG(LogTemp, Warning, TEXT("Random Maze generation completed"));
-						bRandomizeMaze = false;
 					}
 				}
 			}
